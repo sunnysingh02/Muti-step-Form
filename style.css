@@ -1,0 +1,220 @@
+/* Set background image */
+body {
+    background: url("blur-radial.png") no-repeat center center fixed;
+    background: linear-gradient(to right, #001f3f, black); /* Navy blue fading into black */
+    display: flex;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* General container styling for steps */
+.form-container, #step2, #step3 {
+    background: linear-gradient(to bottom, #12273a, #233a7a); /* Soft gradient */
+    padding: 30px;
+    border: 3px solid #004080; /* Dark blue border */
+    border-radius: 15px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.4);
+    width: 350px;
+    text-align: left; /* Align form content */
+}
+
+/* Input fields */
+input {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #004080;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+    background-color: #f8f8ff;
+    color: #333;
+}
+
+/* Input focus effect */
+input:focus {
+    background-color: #e6f2ff;
+    border-color: #002050;
+    outline: none;
+}
+
+/* Sexy button styling */
+button {
+    background: linear-gradient(to right, #ff4d4d, #ff9966);
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(255, 77, 77, 0.4);
+}
+
+button:hover {
+    background: linear-gradient(to right, #ff9966, #ff4d4d);
+    transform: scale(1.05);
+    box-shadow: 0px 7px 20px rgba(255, 77, 77, 0.6);
+}
+
+/* Step counter styling */
+.step-container {
+    text-align: center;
+    margin-top: 15px;
+    padding-top: 10px;
+    color: white;
+}
+
+/* Circle indicators */
+.circle-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: gray;
+    transition: 0.3s;
+}
+
+/* Active step indicator */
+.circle.active {
+    background-color: white;
+}
+#step2 {
+    padding: 20px; /* Adds more space inside the container */
+    background: linear-gradient(to bottom, #f0f8ff, #dcdcdc); /* Matches Step 1 */
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+}
+
+/* Improve readability for Step 2 text */
+#step2 h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #004080; /* Dark blue */
+    text-align: left;
+}
+
+/* Adjust spacing for radio buttons */
+#step2 label {
+    font-size: 18px;
+    color: #333;
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+/* Style radio button options like bars */
+label {
+    display: block;
+    padding: 10px 15px;
+    background-color: #004080; /* Dark blue */
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 8px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Style for selected option */
+input[type="radio"] {
+    display: none; /* Hide default radio buttons */
+}
+
+label:hover {
+    background-color: #002050; /* Darker on hover */
+}
+
+/* Highlight selected bar option */
+input[type="radio"]:checked + label {
+    background-color: #ff4d4d; /* Fiery red when selected */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(255, 77, 77, 0.4);
+}
+/* Hide default radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Style labels as bar-like options */
+label {
+    display: block;
+    padding: 12px 15px;
+    background-color: #004080; /* Default dark blue */
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover effect */
+label:hover {
+    background-color: #002050;
+}
+
+/* Selected state - when radio is checked */
+input[type="radio"]:checked + label {
+    background-color: #ff4d4d; /* Fiery red when selected */
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 5px 10px rgba(255, 77, 77, 0.4);
+}
+#step3 {
+    color: white; /* Ensures all text in Step 3 is white */
+    padding: 20px;
+    background: linear-gradient(to bottom, #12273a, #233a7a);
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+}
+/* Hidden popup initially */
+.reward-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgba(255, 215, 0, 0.9); /* Gold color */
+    color: black;
+    font-size: 22px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Show animation */
+.reward-popup.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {  /* Tablets */
+    .form-container, #step2, #step3 {
+        width: 90%;
+        padding: 20px;
+    }
+}
+@media (max-width: 480px) {  /* Mobile */
+    .form-container, #step2, #step3 {
+        width: 95%;
+        padding: 15px;
+    }
+}

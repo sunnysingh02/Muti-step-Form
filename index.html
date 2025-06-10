@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form class="form-container">
+        <p>Register</p>
+        <p>Name</p>
+        <p><input type="text" placeholder="Enter Your Name" required id="form-name"></p>
+        <p>Email</p>
+        <p><input type="email" placeholder="Enter Your Email" required id="form-email"></p>
+        <p><button id="btn">Continue</button></p>
+   
+    <div class="step-container">
+        <p>Step <span id="current-step">1</span> of <span id="total-step">3</span> </p>
+        <div class="circle-container">
+            <span class="circle" id="circle1"></span>
+            <span class="circle" id="circle2"></span>
+            <span class="circle" id="circle3"></span>
+        </div>
+
+    </div>
+     </form>
+    <!--step 2-->
+    <div id="step2" style="display: none;">
+        <h2>Which topics you are interested in?</h2>
+        <label>
+            <input type="radio" name="topic" value="Software Development"> Software Development
+
+        </label><br>
+        <label>
+            <input type="radio" name="topic" value="User Experience"> User Experience
+
+        </label><br>
+        <label>
+            <input type="radio" name="topic" value="Graphic Design"> Graphic Design
+
+        </label><br>
+        <button id="btn2">Continue</button>
+        <div class="step-container">
+            <p>Step <span id="current-step">2</span> of <span id="total-step">3</span></p>
+            <div class="circle-container">
+                <span class="circle" id="circle1"></span>
+                <span class="circle" id="circle2"></span>
+                <span class="circle" id="circle3"></span>
+            </div>
+        </div>
+    </div>
+    <!--step 3-->
+    <div id="step3" style="display: none;">
+        <h2>Summary</h2>
+        <p>Name:<span id="summary-name"></span></p>
+        <p>Email:<span id="summary-email"></span></p>
+        <p>topic:<span id="summary-topic"></span></p>
+
+        <button id="submit">Submit</button>
+        <div id="reward-popup" class="reward-popup">
+    🎉 Congratulations! You’ve successfully completed the form! 🎉
+</div>
+
+
+    </div>
+    <script src="szript1.js"></script>
+    <script src="szript2.js"></script>
+    <script src="szript3.js"></script>
+</body>
+
+</html>
